@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">      
+        <span class="logoInner"> Images generator VANILLA</span>      
+      <form class="inputBlock">
+        <input
+          class="input"
+          type="text"
+          id="searchTerm"
+          name="searchTerm"
+          placeholder="Поиск изображений..."
+        />
+        <button type="submit" class="searchButton">Найти</button>
+      </form>
+    </div>
+    <div class="titleBlock">
+        <span class="titleInner">Введите название изображения в поиске</span>
+    </div>
+    <div class="content"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

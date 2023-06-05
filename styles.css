@@ -1,0 +1,136 @@
+/* W3C standard
+   сейчас только для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: none;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--green2);
+  border-radius: 5px;
+  border: 3px solid var(--green1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+:root {
+  --black: #1a1a1a;
+  --green1: #264837;
+  --green2: #438160;
+  --green3: #578b61;
+  --white: #fff;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.header {
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--green1);
+}
+.logoInner {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+}
+.inputBlock {
+  display: flex;
+  width: 300px;
+  border: 2px solid var(--green2);
+  border-radius: 10px 0px 0px 10px;
+}
+.input {
+  border: none;
+  background-color: transparent;
+  flex: 1;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  font-size: 18px;
+}
+::placeholder {
+  color: var(--white);
+}
+.searchButton {
+  font-size: 18px;
+  cursor: pointer;
+  padding-right: 5px;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green2);
+
+  border: none;
+  color: var(--white);
+}
+
+.content {
+  overflow-y: auto;
+  padding: 50px;
+  flex: 1;
+  background-color: var(--black);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  gap: 20px;
+}
+.imageBox {
+  position: relative;
+  overflow: hidden;
+}
+.imageBox:nth-child(7n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0 4px;
+  object-fit: cover;
+}
+
+.titleBlock {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--black);
+  border-bottom: 4px solid var(--green2);
+}
+.titleInner {
+  color: var(--white);
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .content{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+  }
+  .imageBox:nth-child(7n + 1) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}
